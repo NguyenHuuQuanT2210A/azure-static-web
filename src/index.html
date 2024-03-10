@@ -11,7 +11,14 @@
 <body>
   <main>
     <h1>Nguyen Huu Quan JavaScript App</h1>
+    <p>Loading content from the API: <b id="name">.....</b> </p>
   </main>
+  <script>
+    (async function () {
+      const { text } = await (await fetch(`/api/src/functions`)).json();
+      document.querySelector('#name').textContent = text;
+    }());
+  </script>
 </body>
 <!-- Bạn nhấn F1 (Fn + F1, Ctrl + shift + P) ==> open Command palette  -->
 <!-- watting ....  -->
